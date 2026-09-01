@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="920" viewBox="0 0 1400 920">
+<style>
+text{font-family:Arial,sans-serif;fill:#111}.title{font-size:26px;font-weight:bold}.name{font-size:19px;font-weight:bold}.item{font-size:15px}.box{fill:#f8fbff;stroke:#253858;stroke-width:2}.head{fill:#dceaff;stroke:#253858;stroke-width:2}.line{stroke:#253858;stroke-width:2;fill:none}.arrow{fill:#fff;stroke:#253858;stroke-width:2}
+</style>
+<rect width="1400" height="920" fill="white"/>
+<text x="700" y="38" text-anchor="middle" class="title">Diagrama de Classes — Sistema de Transporte</text>
+
+<g>
+<rect x="70" y="80" width="360" height="180" class="box"/><rect x="70" y="80" width="360" height="45" class="head"/>
+<text x="250" y="109" text-anchor="middle" class="name">ParteEntrega (abstrata)</text>
+<text x="85" y="150" class="item">- nome: String</text><text x="85" y="174" class="item">- endereco: String</text>
+<line x1="70" y1="190" x2="430" y2="190" class="line"/>
+<text x="85" y="216" class="item">+ getNome(): String</text><text x="85" y="240" class="item">+ getEndereco(): String</text>
+</g>
+
+<g>
+<rect x="20" y="390" width="270" height="140" class="box"/><rect x="20" y="390" width="270" height="45" class="head"/>
+<text x="155" y="419" text-anchor="middle" class="name">Cliente</text>
+<text x="35" y="462" class="item">- cpf: String</text><line x1="20" y1="480" x2="290" y2="480" class="line"/>
+<text x="35" y="510" class="item">+ getCpf(): String</text>
+</g>
+
+<g>
+<rect x="330" y="390" width="270" height="140" class="box"/><rect x="330" y="390" width="270" height="45" class="head"/>
+<text x="465" y="419" text-anchor="middle" class="name">Comercio</text>
+<text x="345" y="462" class="item">- cnpj: String</text><line x1="330" y1="480" x2="600" y2="480" class="line"/>
+<text x="345" y="510" class="item">+ getCnpj(): String</text>
+</g>
+
+<path d="M155 390 L155 320 L230 320 L230 278" class="line"/><polygon points="230,260 218,280 242,280" class="arrow"/>
+<path d="M465 390 L465 320 L270 320 L270 278" class="line"/><polygon points="270,260 258,280 282,280" class="arrow"/>
+
+<g>
+<rect x="820" y="80" width="430" height="210" class="box"/><rect x="820" y="80" width="430" height="45" class="head"/>
+<text x="1035" y="109" text-anchor="middle" class="name">Transporte (abstrata)</text>
+<text x="835" y="150" class="item">- tipo: String</text><text x="835" y="174" class="item">- taxaFixa: double</text>
+<text x="835" y="198" class="item">- custoPorKm: double</text><line x1="820" y1="215" x2="1250" y2="215" class="line"/>
+<text x="835" y="242" class="item">+ calcularCusto(distancia): double</text><text x="835" y="268" class="item">+ getTipo(): String</text>
+</g>
+
+<g class="item">
+<rect x="650" y="410" width="130" height="60" class="head"/><text x="715" y="447" text-anchor="middle">Aviao</text>
+<rect x="795" y="410" width="130" height="60" class="head"/><text x="860" y="447" text-anchor="middle">Barco</text>
+<rect x="940" y="410" width="130" height="60" class="head"/><text x="1005" y="447" text-anchor="middle">Moto</text>
+<rect x="1085" y="410" width="130" height="60" class="head"/><text x="1150" y="447" text-anchor="middle">Carro</text>
+<rect x="1230" y="410" width="130" height="60" class="head"/><text x="1295" y="447" text-anchor="middle">Van</text>
+</g>
+
+<path d="M715 410 L715 350 L985 350 L985 308" class="line"/><path d="M860 410 L860 350" class="line"/>
+<path d="M1005 410 L1005 308" class="line"/><path d="M1150 410 L1150 350 L1045 350 L1045 308" class="line"/>
+<path d="M1295 410 L1295 350 L1085 350 L1085 308" class="line"/>
+<polygon points="1005,290 993,310 1017,310" class="arrow"/>
+
+<g>
+<rect x="435" y="650" width="530" height="210" class="box"/><rect x="435" y="650" width="530" height="45" class="head"/>
+<text x="700" y="679" text-anchor="middle" class="name">Entrega</text>
+<text x="450" y="720" class="item">- remetente: ParteEntrega</text><text x="450" y="744" class="item">- destinatario: ParteEntrega</text>
+<text x="450" y="768" class="item">- distancia: double</text><text x="450" y="792" class="item">- transportes: List&lt;Transporte&gt;</text>
+<line x1="435" y1="807" x2="965" y2="807" class="line"/>
+<text x="450" y="835" class="item">+ escolherTransporteMaisBarato(): Transporte</text>
+</g>
+
+<path d="M540 650 L330 530" class="line"/><text x="385" y="592" class="item">remetente/destinatário</text>
+<path d="M860 650 L1035 490" class="line"/><text x="930" y="585" class="item">compara custos</text>
+</svg>
